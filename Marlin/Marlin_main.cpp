@@ -320,7 +320,7 @@ int EtoPPressure=0;
   float purgeLength = 2;
   float purgeFeed = 2;
   float purgeAmount = 0;
-  float inactiveExtTempOffset = 20;
+  float inactiveExtTempOffset = 15;
   float purgeTravelFeed = 3000/60;//6000/60;
   float tmpTarget[EXTRUDERS]={0.0,0.0};
 #ifdef ULTIPANEL
