@@ -317,8 +317,8 @@ int EtoPPressure=0;
   float exitPoint_X[EXTRUDERS] = {20,270};//x co-ordinate of the EXIT point just after the brush
   float exitPoint_Y[EXTRUDERS] = {115,98};
 
-  float purgeLength = 2;
-  float purgeFeed = 2;
+  float purgeLength = 4;
+  float purgeFeed = 200;
   float purgeAmount = 0;
   float inactiveExtTempOffset = 15;
   float purgeTravelFeed = 3000/60;//6000/60;
@@ -1375,20 +1375,20 @@ void purgeSequece(){
     current e axis would be -retract_distance that is set in the fracktory parameters. thus, if the position of the plan buffer is set to zero, then the
     extruder will extruder 5 mm filament. the value if "purgeLength" should be set such that it takes an acctount of this.
     */
-    if (current_position[E_AXIS] > -10 && current_position[E_AXIS] < 0) //if a retraction had taken place, happens just before toolchange
+    if ((current_position[E_AXIS] > -15 && current_position[E_AXIS] < 0)) //if a retraction had taken place, happens just before toolchange
     {
-        purgeAmount = purgeLength-current_position[E_AXIS];
-        plan_buffer_line(firstPoint_X[active_extruder],firstPoint_Y[active_extruder],current_position[Z_AXIS],purgeAmount,purgeFeed,active_extruder);
+        purgeAmount = purgeLength;
+        plan_buffer_line(firstPoint_X[active_extruder],firstPoint_Y[active_extruder],current_position[Z_AXIS],purgeAmount,purgeFeed/60,active_extruder);
         //Zeros the extruder, thus when in the gcode, G1 E0 will do nothing, after the tool is changed. Refer to a gcode with toolchange and retraction for clarity
         current_position[E_AXIS] = 0;
         plan_set_e_position(current_position[E_AXIS]);
-
     }
-
-    else //all  other time's
+    else //all  other time's, purge relative to current position
     {
-      purgeAmount = purgeLength;
+      purgeAmount = current_position[E_AXIS]+purgeLength;
       plan_buffer_line(firstPoint_X[active_extruder],firstPoint_Y[active_extruder],current_position[Z_AXIS],purgeAmount,purgeFeed,active_extruder);
+      current_position[E_AXIS] = current_position[E_AXIS]+purgeLength;
+      plan_set_e_position(current_position[E_AXIS]);
     }
       plan_buffer_line(firstPoint_X[active_extruder],firstPoint_Y[active_extruder],current_position[Z_AXIS],(current_position[E_AXIS] - 1),purgeFeed,active_extruder);
       //Zeros the extruder, thus when in the gcode, G1 E0 will do nothing, after the tool is changed. Refer to a gcode with toolchange and retraction for clarity

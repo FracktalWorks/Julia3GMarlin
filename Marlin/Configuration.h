@@ -49,7 +49,7 @@
 
 // Define this to set a custom name for your generic Mendel,
 #define CUSTOM_MENDEL_NAME "Julia3G"
-#define FIRMWARE_VERSION "1.0.0"
+#define FIRMWARE_VERSION "0.0.9"
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
 // #define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
@@ -339,7 +339,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define X_MIN_POS 0
 #define Y_MAX_POS 210//250 //REDUCE!
 #define Y_MIN_POS 0
-#define Z_MAX_POS 250
+#define Z_MAX_POS 247
 #define Z_MIN_POS 0
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
