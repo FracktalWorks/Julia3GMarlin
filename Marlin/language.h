@@ -53,9 +53,8 @@
   #else
     #define MACHINE_NAME "Mendel"
   #endif
-
 // Default firmware set to Mendel
-  #define FIRMWARE_URL "https://github.com/MarlinFirmware/Marlin"
+  #define FIRMWARE_URL "https://github.com/FracktalWorks/Julia3GMarlin"
 #endif
 
 
@@ -107,7 +106,8 @@
 #define MSG_HEATING_COMPLETE                "Heating done."
 #define MSG_BED_HEATING                     "Bed heating..."
 #define MSG_BED_DONE                        "Bed done."
-#define MSG_M115_REPORT                     "FIRMWARE_VERSION:"FIRMWARE_VERSION" FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
+#define MSG_M115_REPORT                     "FIRMWARE_NAME:Marlin" " FIRMWARE_VERSION:" FIRMWARE_VERSION " SOURCE_CODE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " X-FIRMWARE_LANGUAGE:" FIRMWARE_LANGUAGE_M115
+//#define MSG_M115_REPORT                     "FIRMWARE_VERSION:"FIRMWARE_VERSION" FIRMWARE_URL:" FIRMWARE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID "\n"
 #define MSG_COUNT_X                         " Count X: "
 #define MSG_ERR_KILLED                      "Printer halted. kill() called!"
 #define MSG_ERR_STOPPED                     "Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)"

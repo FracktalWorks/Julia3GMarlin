@@ -49,7 +49,8 @@
 
 // Define this to set a custom name for your generic Mendel,
 #define CUSTOM_MENDEL_NAME "Julia3G"
-#define FIRMWARE_VERSION "0.0.9"
+#define FIRMWARE_VERSION "1.0.0"
+#define FIRMWARE_LANGUAGE_M115 "EN"
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
 // #define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
@@ -485,7 +486,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // default settings
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {80.0, 80.0, 503.937, 140}  // default steps per unit for Ultimaker
-#define DEFAULT_MAX_FEEDRATE          {300, 300, 20, 100}    // (mm/sec)
+#define DEFAULT_MAX_FEEDRATE          {200, 200, 20, 50}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {800, 800, 30, 10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          800    // X, Y, Z and E max acceleration in mm/s^2 for printing moves

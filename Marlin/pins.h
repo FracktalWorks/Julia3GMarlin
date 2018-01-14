@@ -684,11 +684,11 @@
   #if MB(RAMPS_13_EFF)
     #define HEATER_0_PIN       8
   #else
-    #define HEATER_0_PIN       10   // EXTRUDER 1
+    #define HEATER_0_PIN       7   // EXTRUDER 1 //Was 10 for MKS GEn Julia DUal, interchange to correct crossing Wires
   #endif
 
   #if MB(RAMPS_13_EFB) || MB(AZTEEG_X3)
-    #define HEATER_1_PIN       7 // julia dual
+    #define HEATER_1_PIN       10 // julia dual//Was 7 for MKS GEn Julia DUal, interchange to correct crossing Wires
   #else
     #define HEATER_1_PIN       9    // EXTRUDER 2 (FAN On Sprinter)
   #endif
@@ -709,8 +709,8 @@
     #define HEATER_2_PIN       -1
   #endif
 
-  #define TEMP_0_PIN         13   // ANALOG NUMBERING
-  #define TEMP_1_PIN         15   // ANALOG NUMBERING
+  #define TEMP_0_PIN         15   // ANALOG NUMBERING Was 13 for MKS GEn Julia DUal, interchange to correct crossing Wires
+  #define TEMP_1_PIN         13   // ANALOG NUMBERING Was 15 for MKS GEn Julia DUal, interchange to correct crossing Wires
   #if MB(AZTEEG_X3_PRO)
     #define TEMP_2_PIN         12   // ANALOG NUMBERING
     #define TEMP_3_PIN         11   // ANALOG NUMBERING
