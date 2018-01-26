@@ -1788,7 +1788,7 @@ void process_commands()
       }
     #ifdef ENABLE_AUTO_BED_LEVELING
         if((home_all_axis) || (code_seen(axis_codes[Z_AXIS]))) {
-          current_position[Z_AXIS] += add_homing[Z_AXIS];  //Add Z_Probe offset (the distance is negative)             //HACK
+          current_position[Z_AXIS] += add_homing[Z_AXIS];  //Add Z_Probe offse (the distance is negative)             //HACK
         }
     #endif
       plan_set_position(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS], current_position[E_AXIS]);
